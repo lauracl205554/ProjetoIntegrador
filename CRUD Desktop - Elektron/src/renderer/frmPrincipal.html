@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Painel de Controle</title>
+    <link
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-hidden bg-light">
+    <div class="container-fluid vh-100 d-flex p-0">
+      <div
+        class="bg-dark text-white p-3 d-flex flex-column shadow z-2"
+        style="width: 250px"
+      >
+        <h3 class="text-success fw-bold mb-0">Futebol</h3>
+        <hr />
+      </div>
+
+      <div class="flex-grow-1 d-flex flex-column bg-light">
+        <header
+          class="bg-white border-bottom p-3 d-flex justify-content-between align-items-center shadow-sm z-1"
+        >
+          <h4 class="m-0 text-secondary">Painel de Controle</h4>
+          <span class="badge bg-secondary p-2">Admin</span>
+        </header>
+
+        <main class="flex-grow-1 overflow-auto p-4">
+          <h5 class="mb-3">Clubes</h5>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th>Ano de Fundação</th>
+                <th colspan="2">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyClubes"></tbody>
+          </table>
+
+          <h5 class="mb-3 mt-4">Atletas</h5>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Posição</th>
+                <th>Pé Dominante</th>
+                <th>Ano de Nascimento</th>
+                <th colspan="2">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyAtletas"></tbody>
+          </table>
+        </main>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalConfirmarExclusaoClube" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmar exclusão</h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Tem certeza que deseja excluir o clube
+              <strong id="nomeClubeExcluir"></strong>?
+              <br />
+              Essa ação não pode ser desfeita.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-danger" id="btnConfirmarExclusaoClube">
+              Excluir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalConfirmarExclusaoAtleta" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmar exclusão</h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Tem certeza que deseja excluir o atleta
+              <strong id="nomeAtletaExcluir"></strong>?
+              <br />
+              Essa ação não pode ser desfeita.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-danger" id="btnConfirmarExclusaoAtleta">
+              Excluir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/frmPrincipal.js"></script>
+  </body>
+</html>
